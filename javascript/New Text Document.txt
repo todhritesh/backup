@@ -1,0 +1,89 @@
+js is a light weight interpreted programming lang . It is complementry to and interated to java. It is very easy because 
+it is integrated with html .
+
+#Freatures of js 
+1. Most popular lang 
+2. js is everywhere . (modern browsers , desktop  app , frontend and backend devlopment )
+3. You can create beautiful and fast website . 
+4. Extended to mobile app devlopment now . 
+5 . Largest community and high job demand .
+6 . Tons of framework and libraries 
+
+
+#Java script some most useful framworks and libraries 
+1. Angular
+2. React js
+3. JQuery
+4. vue js
+5. Exp js
+6. ember js
+7 . backbone 
+8 . Node js
+9. selvate js
+
+
+# contents 
+1. syntax
+2. variable and constant
+3. Operators
+4. if else
+5. let
+6. data type
+7 . Events
+8 . Strings
+9 . string methods
+10. array
+11. array method
+12. Number and its method
+13. data and time
+14. objects data type 
+15. comment
+16 . for and while loop
+17 . for in and for of loop
+18 . type converion '
+19. math
+20 . json 
+21. arrow function
+22. this keyword
+23. constructor
+24. object property and method 
+25. Prototypes 
+26. accessors and mutators
+27. Object display
+28. Inheritance
+29. static class
+30. Html dom
+31. dom method and documents 
+32 . form and animations 
+33. cookies and session
+
+
+
+..................................................................
+js variables 
+var x;
+let y;
+const z;
+x=10;
+a=30;
+
+rules for variables name
+1.name can contain letters , digit , underscore and dollar sign
+2. name must begain with letter 
+3. names are case sensective
+4. cannot use reserve keyword as name.
+
+undefined variable
+var a;  //undefined
+
+...........................
+js let keyword
+..........................
+let keyword was introduced in es6 (2015) . variable defined with let cannot redecleard . variable defined with let must be
+decleard first . variable defined with let have block scope 
+	
+js const keyword
+the const keyword was introduced in es6 variable defined with const cannot be redecleard . variable defined with const 
+cannot be reassigned . variable defined with have block level
+
+

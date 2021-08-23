@@ -1,0 +1,25 @@
+in c programming an enumration type (also called enum ) is a data type that consist inegral constnts . To define enum
+enum key is used
+----
+
+
+enum flag {const1 , const 2 ..............const3}
+
+by default const 1 is 0 , const 2 is 1 and so on. You can change the default value of enum during declearation 
+	enum data{
+		club =0
+		room = 49
+		table =20
+		}
+
+#Enum type declearation
+
+	when you define an enum type the w print for the variable is created . here how you can crate variable of enum type 
+	
+	enum boolean {true, false}
+	enum boolean check //variable decleared
+	enum boolean {true, false}check;
+	here a variable check of type enum variable is created and here the value of false is equal to 0 and the value of 
+	true = 1 .
+
+

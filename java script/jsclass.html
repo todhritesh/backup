@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car{
+          
+            constructor(name, year){
+                this.name = name;
+                this.year = year;
+            }
+            getDetails(){
+                console.log("name : "+this.name + "\n" + "year : "+this.year );
+            }
+        }
+
+        let honda = new Car("honda",3423);
+        honda.getDetails();
+
+        let safari = new Car("safariweer",78904);
+        console.log(safari.name)
+        // safari.getDetails()
+    </script>
+</body>
+</html>
