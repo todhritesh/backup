@@ -3,7 +3,7 @@
 @section("content")
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 mx-auto p-3 border border-4 border-dark my-2">
+            <div class="col-lg-6 mx-auto p-3 border border-4 border-dark my-2 alert-secondary">
                 <form action="{{route("admin.product.insert")}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">

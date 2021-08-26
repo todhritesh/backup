@@ -33,13 +33,13 @@
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" >Action</button>
 
                             <div class="dropdown-menu">
-                                <a href="" class="dropdown-item">Edit</a>
-                                <a href="" class="dropdown-item">View</a>
+                                <a href="" class="dropdown-item"><i class="bi bi-pencil-square"></i> Edit</a>
+                                <a href="" class="dropdown-item"><i class="bi bi-eye"></i> View</a>
                                 <form action="{{route("admin.product.delete",["id"=>$item->id])}}" method="post">
                                     @method("delete")
                                     @csrf
                                     <input type="hidden">
-                                    <button type="submit" class="dropdown-item">Delete</button>
+                                    <button type="submit" class="dropdown-item"><i class="bi bi-trash"></i> Delete</button>
                                 </form>
                             </div>
                         </td>

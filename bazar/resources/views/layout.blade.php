@@ -11,6 +11,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a href="" class="navbar-brand">Bazar</a>
+            @livewire("search-input",["data"=>"iii"])
         </div>
     </nav>
 

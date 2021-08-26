@@ -7,6 +7,7 @@ use Livewire\Component;
 class UserDetail extends Component
 {
     public $user1;
+    public $msg;
 
     public function render()
     {

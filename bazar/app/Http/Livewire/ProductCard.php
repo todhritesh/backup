@@ -12,7 +12,7 @@ class ProductCard extends Component
         return <<<'blade'
 
                 <div class="card">
-                    <img src="" class="card-img-top" style="object-fit:contain;height:200px;">
+                    <img src="{{asset('photos/'.$data->image)}}" class="card-img-top" style="object-fit:contain;height:200px;">
                     <div class="card-body">
                         <h2>{{$data->price}}</h2>
                         <h4 > {{$data->p_title}} </h4>
