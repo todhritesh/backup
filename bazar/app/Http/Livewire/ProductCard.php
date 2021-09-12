@@ -11,11 +11,11 @@ class ProductCard extends Component
     {
         return <<<'blade'
 
-                <div class="card">
-                    <img src="{{asset('photos/'.$data->image)}}" class="card-img-top" style="object-fit:contain;height:200px;">
+                <div class="card mb-3 shadow">
+                    <img src="{{asset('photos/'.$data->image)}}" style="object-fit:contain;height:150px;">
                     <div class="card-body">
-                        <h2>{{$data->price}}</h2>
-                        <h4 > {{$data->p_title}} </h4>
+                    <h6 class="fw-bolder"> {{$data->p_title}} </h6>
+                    <h6 class = "small fw-bold">₹ &nbsp{{$data->price}}<span class='small text-decoration-line-through ms-3 text-muted'>₹ &nbsp{{$data->discount_price}}</span></h6>
                         <p class="small">{{$data->category->title}}</p>
                     </div>
                 </div>

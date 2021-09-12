@@ -2,11 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 use App\Http\Controllers\AdminController;
 
 route::get("/",function(){
     return view("home");
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 
 Route::prefix("admin")->group(function(){
     route::get("/",[AdminController::class,"index"])->name('admin.index');
@@ -34,5 +42,6 @@ Route::prefix("admin")->group(function(){
     route::get("orders/",[AdminController::class,"orders"])->name("admin.order");
 
 });
+
 
 

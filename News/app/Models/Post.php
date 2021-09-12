@@ -10,11 +10,14 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+    
     function city(){
-        return $this->hasMany(City::class,"id","city_id");
+        return $this->hasOne(City::class,"id","city_id");
     }
 
     function states(){
-        return $this->hasMany(State::class,"state_id","id");
+        return $this->hasOne(State::class,"id","state_id");
     }
 }
