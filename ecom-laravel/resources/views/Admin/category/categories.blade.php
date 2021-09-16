@@ -2,9 +2,9 @@
 
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid mt-3">
         <div class="container">
-            <a href="{{route('category.create')}}" class="btn btn-success">Add Category</a>
+            <a href="{{route('category.create')}}"  class="btn btn-success float-end">Add Category</a>
         </div>
         <table class="table table-bordered">
             <tr>
@@ -20,7 +20,7 @@
                     <td>{{$category->cat_title}}</td>
                     <td>{{$category->description}}</td>
                     <td>{{$category->parent_id}}</td>
-                    <td>
+                    <td class='d-flex'>
                         <form action="{{route('category.destroy',['category'=>$category->id])}}" method="POST">
                             @method("delete")
                             @csrf
