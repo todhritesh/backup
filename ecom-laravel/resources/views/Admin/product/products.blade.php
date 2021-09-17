@@ -22,7 +22,7 @@
                     <td>{{$pro->id}}</td>
                     <td>{{$pro->title}}</td>
                     <td>{{$pro->discount_price}} <del>{{$pro->price}}</del></td>
-                    <td>{{$pro->category}}</td>
+                    <td>{{$pro->category->cat_title}}</td>
                     <td><img src="{{asset("products/$pro->img1")}}" width="50px" /></td>
                     <td>{{$pro->brand}}</td>
                     <td class="d-flex">

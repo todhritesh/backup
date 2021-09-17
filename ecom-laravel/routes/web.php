@@ -18,8 +18,15 @@ Route::resource('order',OrderController::class);
 Route::resource('orderitem',OrderItemController::class);
 
 Route::get("/",[HomeController::class,"home"]);
+Route::get("/search",[HomeController::class,"search"])->name('search');
 Route::get("/view",[HomeController::class,"product_view"]);
 Route::get("/checkout",[HomeController::class,"checkout"]);
+
+
+//auth required
+Route::middleware('auth')->group(function(){
+    Route::post('add_to_cart{id}',[HomeController::class,'add_to_cart']);
+});
 
 //---------------------------------------------admin work
 Route::get('/dashboard', function () {

@@ -170,27 +170,18 @@
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Shirts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sport wears</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Outwears</a>
-            </li>
+
+                @foreach ($categories as $cat)
+                    <li class="nav-item"><a href="" class="nav-link">{{$cat->cat_title}}</a></li>
+                @endforeach
 
           </ul>
           <!-- Links -->
 
-          <form class="form-inline">
+          <form class="form-inline" method='get' action="{{route('search')}}">
             <div class="md-form my-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <input class="form-control mr-sm-2" type="text" name='search' placeholder="search" aria-label="Search">
+              <input type="submit" value="Search" class="btn btn-success">
             </div>
           </form>
         </div>
@@ -208,40 +199,46 @@
           <!--Fourth column-->
           <div class="col-lg-3 col-md-6 mb-4">
 
-            <!--Card-->
-            <div class="card">
+            @foreach ($products as $item)
+            <a href="{{}}">
+                <!--Card-->
+                <div class="card">
 
-              <!--Card image-->
-              <div class="view overlay">
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top"
-                  alt="">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <!--Card image-->
+                <!--Card image-->
+                <div class="view overlay">
+                    <img src="{{asset('products/'.$item->img1)}}" class="card-img-top"
+                    alt="">
+                    <a>
+                    <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <!--Card image-->
 
-              <!--Card content-->
-              <div class="card-body text-center">
-                <!--Category & Title-->
-                <a href="" class="grey-text">
-                  <h5>Outwear</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Black jacket</a>
-                  </strong>
-                </h5>
+                <!--Card content-->
+                <div class="card-body text-center">
+                    <!--Category & Title-->
+                    <a href="" class="grey-text">
+                    <h5>{{$item->category->cat_title}}</h5>
+                    </a>
+                    <h5>
+                    <strong>
+                        <a href="" class="dark-grey-text">{{$item->title}}</a>
+                    </strong>
+                    </h5>
 
-                <h4 class="font-weight-bold blue-text">
-                  <strong>219$</strong>
-                </h4>
+                    <h4 class="font-weight-bold blue-text">
+                    <strong>Rs. {{$item->price}}</strong>
+                    </h4>
 
-              </div>
-              <!--Card content-->
+                </div>
+                <!--Card content-->
 
-            </div>
-            <!--Card-->
+                </div>
+                <!--Card-->
+            </a>
+            @endforeach
+
+
 
           </div>
           <!--Fourth column-->
