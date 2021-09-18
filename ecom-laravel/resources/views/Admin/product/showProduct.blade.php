@@ -27,7 +27,7 @@
                     </tr>
                     <tr>
                         <th>category_id</th>
-                        <td>{{$product->cat_title}}</td>
+                        <td>{{$product->category->cat_title}}</td>
                     </tr>
                 </table>
             </div>

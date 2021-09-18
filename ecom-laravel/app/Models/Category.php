@@ -10,7 +10,5 @@ use App\Modal\Product;
 class Category extends Model
 {
     use HasFactory;
-    public function pro(){
-        return $this->hasMany(Product::class,"category_id","category");
-    }
+
 }
