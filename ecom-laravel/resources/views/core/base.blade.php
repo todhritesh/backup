@@ -76,13 +76,19 @@
           <li class="nav-item">
             <a class="nav-link waves-effect" href="" target="_blank">Profile</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="{{route('login')}}"
-              target="_blank">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="{{route('register')}}" target="_blank">Register</a>
-          </li>
+
+          @guest
+            <li class="nav-item">
+                <a class="nav-link waves-effect" href="{{route('login')}}"
+                target="_blank">Login</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link waves-effect" href="{{route('register')}}" target="_blank">Register</a>
+            </li>
+          @endguest
+
+
         </ul>
 
         <!-- Right -->
@@ -94,6 +100,14 @@
               <span class="clearfix d-none d-sm-inline-block"> Cart </span>
             </a>
           </li>
+
+          @auth
+          <li class="nav-item">
+              <a class="nav-link waves-effect my-auto btn btn-outline-danger" href="{{route('logout')}}"
+              target="_blank">Logout</a>
+          </li>
+        @endauth
+        
         </ul>
 
       </div>
