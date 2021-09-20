@@ -31,6 +31,97 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
+    public function checkCode($code){
+        $c = Coupon::where('code', $code)->first();
+        return $c;
+    }
+
+    public function addCoupon(Request $req){
+        $user = Auth::user();
+        if($req->method() == 'POST'){
+            $code = $req->code;
+
+            $check = $this->checkCode($code);
+
+            $order = Order::where([["ordered",false],["user_id",$user->id]])->first();
+            if($check){
+                if($order){
+                    $order->coupon_id = $check->id;
+                    $order->save();
+                }
+                else{
+                    echo "order not found";
+
+                }
+            }
+            else{
+                echo "invalid or expired coupon code try again";
+                print_r($check);
+            }
+
+        }
+        // return redirect()->route('cart');
+    }
+
+    public function removeItemFromCart(Request $req, $id){
+        $product = Product::find($id);
+        $user = Auth::user();
+        if($product){
+            $order = Order::where([["ordered",false],["user_id",$user->id]])->first();
+            if($order){
+                // if order exist
+                $orderItem = OrderItem::where("ordered",false)->where("user_id",$user->id)->where("product_id",$id)->first();
+                if($orderItem){
+                        $orderItem->delete();
+                        $req->session()->flash("error","Product removed from cart");
+                    }
+                }
+                else{
+                    $req->session()->flash("error","Sorry no active order exist in your cart");
+                }
+        }
+        else{
+            $req->session()->flash("error","Sorry product not found ");
+        }
+        return redirect()->route('cart');
+    }
+
+    public function remove_from_cart(Request $req,$id){
+        $product = Product::find($id);
+        $user = Auth::user();
+        if($product){
+            $order = Order::where([["ordered",false],["user_id",$user->id]])->first();
+            if($order){
+                // if order exist
+                $orderItem = OrderItem::where("ordered",false)->where("user_id",$user->id)->where("product_id",$id)->first();
+                if($orderItem){
+                    // if orderItem exist
+                    if($orderItem->qty > 1){
+                        $orderItem->qty -= 1;
+                        $orderItem->save();
+                    }
+                    else{
+                        $orderItem->delete();
+                        $req->session()->flash("error","Product removed from cart");
+                        return redirect()->route('cart');
+                    }
+                }
+                else{
+                    //creating new orderItem
+                   return redirect()->route('cart');
+                }
+            }
+
+            return redirect()->route('cart');
+
+        }
+        else{
+            $req->session()->flash("error","Product not found");
+            return redirect()->back();
+        }
+
+    }
+
     public function add_to_cart( $id){
         $product = Product::find($id);
         $user = Auth::user();

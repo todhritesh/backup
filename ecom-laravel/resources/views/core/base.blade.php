@@ -15,6 +15,7 @@
   <link href="{{asset('assets/css/mdb.min.css')}}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="{{asset('assets/css/style.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <style type="text/css">
     html,
     body,
@@ -73,18 +74,15 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="" target="_blank">Profile</a>
-          </li>
 
           @guest
             <li class="nav-item">
                 <a class="nav-link waves-effect" href="{{route('login')}}"
-                target="_blank">Login</a>
+                >Login</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link waves-effect" href="{{route('register')}}" target="_blank">Register</a>
+                <a class="nav-link waves-effect" href="{{route('register')}}" >Register</a>
             </li>
           @endguest
 
@@ -94,7 +92,7 @@
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a class="nav-link waves-effect">
+            <a class="nav-link waves-effect" href="{{route('cart')}}">
               <span class="badge red z-depth-1 mr-1"> 1 </span>
               <i class="fas fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span>
@@ -104,10 +102,13 @@
           @auth
           <li class="nav-item">
               <a class="nav-link waves-effect my-auto btn btn-outline-danger" href="{{route('logout')}}"
-              target="_blank">Logout</a>
+              >Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="" >Profile</a>
           </li>
         @endauth
-        
+
         </ul>
 
       </div>

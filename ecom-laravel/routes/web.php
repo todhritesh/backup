@@ -28,6 +28,9 @@ Route::get("/logout",[HomeController::class,"logout"])->name('checkout');
 //auth required
 Route::middleware('auth')->group(function(){
     Route::post('add_to_cart/{id}',[HomeController::class,'add_to_cart'])->name("addcart");
+    Route::get("/removecart/{id}",[HomeController::class,"remove_from_cart"])->name('removecart');
+    Route::post("/add-coupon",[HomeController::class, "addCoupon"])->name("addCoupon");
+    Route::get("/remove-item-from-cart/{id}",[HomeController::class, "removeItemFromCart"])->name("removeItemCart");
 });
 
 //---------------------------------------------admin work

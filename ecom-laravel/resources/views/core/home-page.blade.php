@@ -181,7 +181,7 @@
           <form class="form-inline" method='get' action="{{route('search')}}">
             <div class="md-form my-0">
               <input class="form-control mr-sm-2" type="text" name='search' placeholder="search" aria-label="Search">
-              <input type="submit" value="Search" class="btn btn-success">
+              <input type="submit" value="Search" class="btn btn-success btn-sm border-0">
             </div>
           </form>
         </div>
@@ -198,7 +198,6 @@
 
           <!--Fourth column-->
           @foreach ($products as $item)
-          {{-- <a class='nav-link d-flex' href="{{route('view',['id'=>$item->id])}}"> --}}
           <div class="col-lg-3 col-md-6 mb-4">
 
               <!--Card-->
@@ -237,7 +236,6 @@
                 <!--Card-->
 
             </div>
-        {{-- </a> --}}
           @endforeach
           <!--Fourth column-->
 
